@@ -1,0 +1,29 @@
+<!-- posts-form.handlebars -->
+
+<!-- TITLE -->
+<div class="form-group">
+    <label for="post-title">Title</label>
+    <input class="form-control" type="text" name="title" placeholder="Title" value="{{post.title}}" />
+</div>
+
+<!-- TEXT -->
+<div class="form-group">
+    <label for="post-body">Text</label>
+    <textarea class="form-control" name="body" placeholder="Body" rows="10" />{{post.body}}</textarea>
+</div>
+
+<!-- URL -->
+<div class="form-group">
+    <label for="post-url">Url</lablel>
+    <input class="form-control" type="url" name="url" placeholder="https://www.reddit.com/" value="{{post.url}}" />
+</div>
+
+<!-- SUBREDDIT -->
+<div class="form-group">
+    <label for="post-subreddit">Subreddit</label>
+    <input class="form-control" type="text" name="subreddit" placeholder="Subreddit" value="{{post.subreddit}}" />
+</div>
+
+<!-- BUTTON -->
+<button type="submit">Save Post</button>
+<a href="/">Cancel</a>

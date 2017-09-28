@@ -1,0 +1,31 @@
+<!-- posts-index.handlebars -->
+
+<h1>Posts</h1>
+
+<a href="/posts/new">Write a post</a>
+
+{{#each posts}}
+    <a href="/posts/{{this._id}}">
+        <h3>{{this.title}}</h3>
+    </a>
+
+    <div>
+    <a href="{{this.url}}" target="_blank">
+        {{this.url}}
+    </a>
+    </div>
+    
+    <div>
+    <a href="/n/{{this.subreddit}}">
+        {{this.subreddit}}
+    </a>
+    </div>
+
+    <a href="/posts/{{this._id}}/edit">
+        Edit
+    </a>
+
+    <form method="POST" action="/posts/{{this._id}}?_method=DELETE">
+        <button type="submit">Delete</button>
+    </form>
+{{/each}}
