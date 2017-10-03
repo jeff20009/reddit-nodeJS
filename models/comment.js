@@ -1,8 +1,10 @@
 var mongoose = require('mongoose'),
-    Schema = mongoose.Schema
+      Schema = mongoose.Schema;
 
-var CommentSchema = new Schema({
-    content : { type: String, required: true }
-})
+  var CommentSchema = new Schema({
+    content : { type: String, required: true },
+    author  : String,
+    replies : [this]  
+  });
 
-module.exports = mongoose.model('Comment', CommentSchema)
+  module.exports = mongoose.model('Comment', CommentSchema);

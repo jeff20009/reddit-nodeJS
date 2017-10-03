@@ -1,0 +1,9 @@
+extends layout
+block body
+	.row
+		.col-sm-6.col-sm-offset-3
+			form(method="POST" action='/posts/'+post._id+'/comments/'+comment._id+'/replies')
+				.form-group
+					textarea#reply-content.form-control(name='content', placeholder='Reply')
+				.text-right
+					button.btn.btn-primary(type='submit') Reply

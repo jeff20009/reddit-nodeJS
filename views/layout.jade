@@ -1,0 +1,28 @@
+html
+    head
+        // added bootstrap
+        // Latest compiled and minified CSS
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', integrity='sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u', crossorigin='anonymous')
+        // Latest compiled and minified JavaScript
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', integrity='sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa', crossorigin='anonymous')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+        title Reddit Clone
+        block head
+    body
+        nav.navbar.navbar-default
+            .container
+                .navbar-header
+                    a(href="/").navbar-brand Reddit Clone
+                if (!currentUser) 
+                    ul.nav.navbar-nav.navbar-right
+                        li
+                            a(href='/login') Login
+                        li
+                            a(href='/sign-up') Sign Up
+                else
+                    ul.nav.navbar-nav.navbar-right
+                        li
+                            a(href="/user/"+currentUser.username)=currentUser.username
+                        li
+                            a(href='/logout') Logout
+        block body

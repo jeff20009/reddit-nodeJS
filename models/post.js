@@ -1,24 +1,18 @@
 var mongoose = require('mongoose'),
-    Schema = mongoose.Schema
+    Schema = mongoose.Schema;
+var Comment = require('./comment');
+
 
 var PostSchema = new Schema({
-    createdAt: { type: Date },
-    updatedAt: { type: Date },
-    title: { type: String, required: true },
-    body: { type: String, required: false },
-    url: { type: String, required: true },
-    subreddit: { type: String, required: true },
-    comments: [{ type : Schema.Types.ObjectId, ref : 'Comment'}]
-})
+  title             : { type: String, required: true },
+  summary         : { type: String, required: true },
+  subreddit  : {type: String, required: true },
+  url : String,
+  comments  : [Comment.schema],
+  author  :  String,
+  upVotes : [Schema.Types.ObjectId],
+  downVotes : [Schema.Types.ObjectId],
+  voteScore : {type : Number , default : 0}
+});
 
-PostSchema.pre('save', function(next) {
-    var now = new Date()
-    this.updatedAt = now
-    if ( !this.createdAt ) {
-        this.createdAt = now
-    }
-
-    next()
-})
-
-module.exports = mongoose.model('Post', PostSchema)
+module.exports = mongoose.model('Post', PostSchema);

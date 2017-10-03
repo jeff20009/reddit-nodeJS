@@ -1,0 +1,36 @@
+#author{
+    color : red;
+    display : inline;
+    margin-right: 10px;
+}
+
+#replyBtn{
+    display : inline;
+}
+
+.commentContainer{
+    margin-bottom: 15px;
+    border : 1px solid grey;
+    padding : 5px;
+}
+
+.repliesContainer{
+    margin-top: 10px;
+    margin-left : 15px;
+    border : 1px solid grey;
+    padding : 5px;
+}
+
+.vote-up {
+    display: inline-block;
+}
+
+.vote-down{
+    display: inline-block;
+}
+
+.voteCount{
+    color : blue;
+    margin-left: 15px;
+    display: inline;
+}

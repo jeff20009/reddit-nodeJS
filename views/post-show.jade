@@ -1,0 +1,33 @@
+extends layout
+block head
+    link(href='../post.css', rel='stylesheet')
+    script(src='../posts.js' rel="script")
+block body
+    .row
+        a(href="/")
+            button.btn.btn-primary Exit
+        .col-sm-6.col-sm-offset-3
+            a.lead(href='/posts/'+post._id)
+                h1= post.title
+            p=post.summary
+            
+            form(data-id=post._id).vote-up
+                button(type="submit") Vote Up
+            form(data-id=post._id).vote-down
+                button(type="submit") Vote Down
+            p.voteCount=post.voteScore
+                
+            form(method='POST' action='/posts/'+post._id+'/comments')
+                textarea.form-control(name='content', placeholder='Comment')
+                .text-right
+                    button(type='submit') Save
+            for comment in post.comments
+                .commentContainer
+                    p=comment.content
+                    p#author=comment.author
+                    a(href="/posts/"+post._id+"/comments/"+comment._id+"/replies/new") Reply
+                    for reply in comment.replies
+                        .repliesContainer
+                            p=reply.content
+                            
+                            

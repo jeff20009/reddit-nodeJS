@@ -1,0 +1,14 @@
+extends layout
+block body
+    .row
+        .col-sm-4.col-sm-offset-4
+            form(method="POST" action='/sign-up')
+                legend Sign Up
+                .form-group
+                    label(for='post-title') Username
+                    input.form-control(type='text', name='username', placeholder='Username')
+                .form-group
+                    label(for='post-summary') Password
+                    input.form-control(type="password" name='password', placeholder='Password')
+                .text-right
+                    button.btn.btn-primary(type='submit') Sign Up

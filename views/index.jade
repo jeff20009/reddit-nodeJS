@@ -1,0 +1,16 @@
+extends layout
+block head
+    link(href='index.css', rel='stylesheet')
+block body
+    .row
+        a(href='/posts/new')
+            button Create Post
+        .col-sm-8.col-sm-offset-2
+            div.postsContainer
+                for post in posts
+                    a(href="/posts/"+post._id)
+                        h3=post.title
+                    p#author=post.author
+                    a#subreddit(href="/g/"+post.subreddit)=("/" + post.subreddit + "/")
+                    
+            
