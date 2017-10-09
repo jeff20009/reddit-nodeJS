@@ -17,7 +17,7 @@ module.exports = function(app) {
 
     app.post('/posts/:id/vote-down', function (req, res) {
       Post.findById(req.params.id).exec(function (err, post) {
-        if(!post.downVotes.indexOf(req.user._id) ==-1){
+        if(post.downVotes.indexOf(req.user._id) != -1){
             post.downVotes.push(req.user._id);
             post.voteScore -= 1;
         }
