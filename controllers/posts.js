@@ -3,29 +3,61 @@ var User = require('../models/user');
 
 module.exports = function(app) {
 
+  /**********************************************
+  /
+  / Up / Down vote
+  /
+  /*********************************************/
     app.post('/posts/:id/vote-up', function (req, res) {
-      Post.findById(req.params.id).exec(function (err, post) {
-        if(post.upVotes.indexOf(req.user._id) == -1){
-            post.upVotes.push(req.user._id);
-            post.voteScore += 1;
-        }
-        post.save();
+      console.log("Vote up user:", req.user);
 
-        res.send({voteScore : post.voteScore});
-    });
+      if (req.user === null) {
+        return res.send(401);
+      }
+
+      Post.findById(req.params.id).then((post)=>{
+        if (post.upVotes.indexOf(req.user._id) == -1) {
+          post.upVotes.push(req.user._id);
+          post.voteScore += 1;
+          post.save();
+        }
+      }).catch((err)=>{
+        console.log(err.message);
+      });
+
+
+    //   Post.findById(req.params.id).exec(function (err, post) {
+    //     if (post.upVotes.indexOf(req.user._id) == -1) {
+    //         post.upVotes.push(req.user._id);
+    //         post.voteScore += 1;
+    //     }
+    //     post.save();
+
+    //     res.send({ voteScore : post.voteScore });
+    // });
   });
 
     app.post('/posts/:id/vote-down', function (req, res) {
-      Post.findById(req.params.id).exec(function (err, post) {
-        if(post.downVotes.indexOf(req.user._id) != -1){
-            post.downVotes.push(req.user._id);
-            post.voteScore -= 1;
-        }
-        post.save();
+      console.log("Vote down user:", req.user);
 
-        res.send({voteScore : post.voteScore});
+      if (req.user === null) {
+        return res.send(401);
+      }
+
+      Post.findById(req.params.id).then((post)=>{
+        console.log(req.params.id);
+        console.log(post.downVotes.indexOf(req.user._id));
+        
+        if (post.downVotes.indexOf(req.user._id) == -1) {
+          post.downVotes.push(req.user._id);
+          post.voteScore -= 1;
+          post.save();
+        }
+      }).catch((err)=>{
+        console.log(err.message);
+      });
+
     });
-  });
 
   // CREATE
   app.post('/posts', function(req,res) {
