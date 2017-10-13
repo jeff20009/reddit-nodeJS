@@ -10,8 +10,8 @@ module.exports = function(app) {
   /*********************************************/
     app.post('/posts/:id/vote-up', function (req, res) {
       console.log("Vote up user:", req.user);
-
-      if (req.user === null) {
+      const user = req.user;
+      if (user === null) {
         return res.send(401);
       }
 
@@ -39,15 +39,15 @@ module.exports = function(app) {
 
     app.post('/posts/:id/vote-down', function (req, res) {
       console.log("Vote down user:", req.user);
-
-      if (req.user === null) {
+      const user = req.user;
+      if (user === null) {
         return res.send(401);
       }
 
       Post.findById(req.params.id).then((post)=>{
         console.log(req.params.id);
         console.log(post.downVotes.indexOf(req.user._id));
-        
+
         if (post.downVotes.indexOf(req.user._id) == -1) {
           post.downVotes.push(req.user._id);
           post.voteScore -= 1;
