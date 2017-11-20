@@ -1,10 +1,48 @@
-In this project, I  develop a clone of Reddit with posts, subreddits, authentication, and even a search bar. Here's the tech stack
+In this project, I develop a clone of Reddit with posts, subreddits, authentication, and even a search bar. Here's the tech stack
 
-1. Node.js
-1. Express.js
-1. MongoDB & Mongoose (ODM)
-1. JSON Web Tokens (JWT)
 
+## Table of Contents
+1. Technologies Used
+2. How to locally run Activity Chooser 
+3. How to use Activity Chooser
+
+
+### Technologies Used 
+- [Express](https://expressjs.com/)
+-  Node.js
+-  MongoDB & Mongoose (ODM)
+-  JSON Web Tokens (JWT)
+
+
+### Development
+```
+npm install
+npm start
+```
+This will start an express app at http://localhost:8000.
+
+
+### Production Build
+```
+npm run build
+npm run build:start
+```
+This will create a production build and will start a server at http://localhost:8000/
+
+
+### Deployment
+Install the Heroku toolbelt.
+```
+heroku create myapp
+git push heroku master
+```
+
+
+***
+## How to use Reddit Project
+
+It's avaliable at
+https://reddit-clone-tutorial.herokuapp.com
 
 # Reddit Clone project structure
 
@@ -59,3 +97,12 @@ Ok, we've got user narratives, wireframes, and a plan for the first few features
 1. Bootstrap Express.js. You can use Handlebars or Jade as a templating engine if you like. [Express documentation](https://expressjs.com/en/starter/hello-world.html). Now run your server and get "hello world" to appear.
 1. Once you have "hello world" and a template engine installed, move on to the next step.
 1. Now add bootstrap to your layout template `<head>` using the CDN.
+
+
+
+### Authors
+- [Jeff Chiu](https://www.linkedin.com/in/jeffchiu1) - Front/Back End
+
+
+### License 
+This project is licensed under the MIT License - see the [LICENSE.](https://tldrlegal.com/license/mit-license) file for details

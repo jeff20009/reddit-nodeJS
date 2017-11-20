@@ -30,11 +30,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JamieRez/Reddit-Clone.git"
+    "url": "git+https://github.com/Jeffchiucp/reddit-nodeJS.git"
   },
   "bugs": {
-    "url": "https://github.com/JamieRez/Reddit-Clone/issues"
+    "url": "https://github.com/Jeffchiucp/reddit-nodeJS/issues"
   },
-  "homepage": "https://github.com/JamieRez/Reddit-Clone#readme",
+  "homepage": "https://github.com/Jeffchiucp/reddit-nodeJS#readme",
   "description": ""
 }
