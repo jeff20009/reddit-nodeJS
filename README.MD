@@ -1,4 +1,8 @@
-In this project, I develop a clone of Reddit with posts, subreddits, authentication, and even a search bar. Here's the tech stack
+# Reddit
+
+
+## Introduction
+Reddit inspired by reddit.com. Users can create posts that they are passionate about, and others can make votes up and down.
 
 
 ## Table of Contents
