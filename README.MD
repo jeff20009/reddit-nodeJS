@@ -1,15 +1,19 @@
 # Reddit
 
-
 ## Introduction
 Reddit inspired by reddit.com. Users can create posts that they are passionate about, and others can make votes up and down.
 
+Contributers&ensp;·&ensp;[Jeff Chiu](https://www.linkedin.com/in/jeffchiu1)
 
-## Table of Contents
-1. Technologies Used
-2. How to locally run Activity Chooser 
-3. How to use Activity Chooser
 
+## Installation
+
+Installation is super friendly using `npm`
+
+```
+$ npm install 
+$ npm start
+```
 
 ### Technologies Used 
 - [Express](https://expressjs.com/)
@@ -20,10 +24,9 @@ Reddit inspired by reddit.com. Users can create posts that they are passionate a
 
 ### Development
 ```
-npm install
-npm start
+sudo mongod
 ```
-This will start an express app at http://localhost:8000.
+This will start an mongod database, this requires dot.env
 
 
 ### Production Build
@@ -41,7 +44,6 @@ heroku create myapp
 git push heroku master
 ```
 
-
 ***
 ## How to use Reddit Project
 
@@ -50,9 +52,9 @@ https://reddit-clone-tutorial.herokuapp.com
 
 # Reddit Clone project structure
 
- I follow the design pattern use by the Model View Controller. MVC helps to separate the concerns and avoids large architectural bugs which are the biggest drain on the speed of a dev team.
+Followed the design pattern use by the Model View Controller. MVC helps to separate the concerns and avoids large architectural bugs which are the biggest drain on the speed of a dev team.
 
-I use the Express and NodeJS to design the interfaces, use inspirations (like Reddit.com!), and keep in mind the rules of a good user interface.
+Express and NodeJS to design the interfaces, use inspirations (like Reddit.com!), and keep in mind the rules of a good user interface.
 
 # Getting Started: User Narratives & Wireframes
 
@@ -78,20 +80,7 @@ Here are some of the routes and features I build
 * Vote up a comment
 * Sort posts by # of votes
 
-In what order should we fulfill these tasks? Write the order down somewhere that you would do these tasks. When you are done, hover over the solution to see what order these tasks in this project.
 
-1. Create a post
-1. Show all posts
-1. Comment on posts
-1. Create subreddits
-1. Create a post on a subreddit
-1. Show all subreddits
-1. Sign up and Login
-1. Associate posts, comments with their author
-1. Make comments on comments
-1. Vote a post up
-1. Vote a comment up
-1. Sort posts by # of votes
 
 # Bootstrapping Express.js
 
@@ -99,9 +88,6 @@ Ok, we've got user narratives, wireframes, and a plan for the first few features
 
 1. Create an npm project (hint: `$ npm init`) - remember to make your main file called `server.js`.
 1. Bootstrap Express.js. You can use Handlebars or Jade as a templating engine if you like. [Express documentation](https://expressjs.com/en/starter/hello-world.html). Now run your server and get "hello world" to appear.
-1. Once you have "hello world" and a template engine installed, move on to the next step.
-1. Now add bootstrap to your layout template `<head>` using the CDN.
-
 
 
 ### Authors
