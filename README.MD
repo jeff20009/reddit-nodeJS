@@ -28,22 +28,6 @@ sudo mongod
 ```
 This will start an mongod database, this requires dot.env
 
-
-### Production Build
-```
-npm run build
-npm run build:start
-```
-This will create a production build and will start a server at http://localhost:8000/
-
-
-### Deployment
-Install the Heroku toolbelt.
-```
-heroku create myapp
-git push heroku master
-```
-
 ***
 ## How to use Reddit Project
 
